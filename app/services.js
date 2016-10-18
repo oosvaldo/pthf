@@ -30,7 +30,7 @@ angular.module('pthf')
   .service('serviceProduct', function($http) {
     //GET JSON PRODUCTS IN OFFER
     this.getOffers = function() {
-      return $http.get('http://localhost/pthf/api/products.php')
+      return $http.get('http://paratodohayfans.oosvaldo/api/products.php')
       .then(function(result) {
         var data = (!!result.data.data) ? result.data.data : [];
         return data;
@@ -40,7 +40,7 @@ angular.module('pthf')
     }
     // GET JSON PRODUCT BY ID
     this.getById = function(id) {
-      return $http.get('http://localhost/pthf/api/product.php?id=' + id)
+      return $http.get('http://paratodohayfans.oosvaldo/api/product.php?id=' + id)
       .then(function(result) {
         var data = (!!result.data.data) ? result.data.data : null;
         return data;
@@ -51,7 +51,7 @@ angular.module('pthf')
 
     // GET JSON PRODUCTS BY KEY WORD
     this.getByKey = function(key) {
-      return $http.get('http://localhost/pthf/api/products.php?key=' + key)
+      return $http.get('http://paratodohayfans.oosvaldo/api/products.php?key=' + key)
       .then(function(result) {
         var data = (!!result.data.data) ? result.data.data : [];
         return data;
@@ -62,7 +62,7 @@ angular.module('pthf')
 
     // GET JSON PRODUCTS BY CATEGORY 
     this.getByCat = function(cat) {
-      return $http.get('http://localhost/pthf/api/products.php?cat=' + cat)
+      return $http.get('http://paratodohayfans.oosvaldo/api/products.php?cat=' + cat)
       .then(function(result) {
         var data = (!!result.data.data) ? result.data.data : [];
         return data;
