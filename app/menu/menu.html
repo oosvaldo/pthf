@@ -2,7 +2,7 @@
   <ul class="menu">
   	<div class="vertical-text" ng-click="toggle()">TIENDA</div>
     <a ng-repeat="category in categories" href="#/categoria/{{category.IdCategoria}}">
-    	<li><i class="fa fa-home"></i> {{category.Categoria}}</li>
+    	<li><img src="http://104.131.145.97/home/src/images/{{category.Icono}}"></i> <span class="name">{{category.Categoria}}</span></li>
     </a>
   </ul>
 </nav>
