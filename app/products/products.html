@@ -1,0 +1,25 @@
+<main-slider></main-slider>
+<div class="products">
+	<div>
+		<span class="products-tittle">DESCUENTOS DE OPORTUNIDAD</span>
+	</div>
+   
+    <ks-swiper-container ng-if="products.length>0" initial-slide="0" loop="false" show-nav-buttons="true" slides-per-view="slides" space-between="5"
+        pagination-is-active="false" pagination-clickable="false">
+        <ks-swiper-slide class="swiper-slide" ng-repeat="product in products">
+        	<div class="element">
+        		<a  href="#product/{{product.IdProducto}}"><img class="product-img" src="http://104.131.145.97/home/admin/images/products/{{product.Image.split(',')[0]}}"></a>
+                <span class="discount"><strong>-{{getDiscount(product)}}%</strong></span>
+                <div class="info">
+                  <p>{{product.NombreProd}}</p>
+                  <span class="price">{{product.PrecioLista | currency}}</span>
+                  <span class="sale-price">{{product.PrecioFailbox | currency }}</span>
+                  <span ng-if="product.CostoEnvio == 0" class="send-message">¡Envío Gratis!</span> 
+                  <span ng-if="product.CostoEnvio > 0" class="send-message">Envío : {{product.CostoEnvio | currency }}</span>
+                </div>
+        	</div>
+            
+        </ks-swiper-slide>
+    </ks-swiper-container>
+    <div class="empty-state" ng-if="products.length <= 0"> <strong>NO SE ENCONTRARON PRODUCTOS </strong></div>
+</div>

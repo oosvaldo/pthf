@@ -1,0 +1,25 @@
+<div class="product">
+	<ks-swiper-container initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" space-between="0"
+	    pagination-is-active="true" pagination-clickable="true">
+	    <ks-swiper-slide class="swiper-slide" ng-repeat="image in product.Image.split(',') track by $index">
+	    	<div class="product-img">
+	    		<span class="discount"><strong>-{{product.discount}}%</strong></span>
+	    		<img class="product-img" src="http://104.131.145.97/home/admin/images/products/{{image}}">
+	    	</div>
+	    </ks-swiper-slide>
+	</ks-swiper-container>
+	<div class="info">
+		<p class="name">{{product.NombreProd}}</p>
+		<p>
+			<span class="price">{{product.PrecioLista | currency}}</span> 
+			<span class="sale-price">{{product.PrecioFailbox | currency }}</span></br>
+			<span class="send-message">{{(product.CostoEnvio == 0) ? '¡Envío Gratis!' : product.CostoEnvio}}</span>
+		</p>
+		<p>
+			{{product.Descripcion}}
+		</p>
+		<div>Marca : {{product.NombreProveedor}}</div>
+		<div>SUK : {{product.SKU}}</div>
+		
+	</div>
+</div>

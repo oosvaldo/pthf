@@ -1,0 +1,9 @@
+<nav class="categories" ng-class="{'close' : !open}">
+  <ul class="menu">
+  	<div class="vertical-text" ng-click="toggle()">TIENDA</div>
+    <a ng-repeat="category in categories" href="#/categoria/{{category.IdCategoria}}">
+    	<li><i class="fa fa-home"></i> {{category.Categoria}}</li>
+    </a>
+  </ul>
+</nav>
+
